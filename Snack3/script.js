@@ -18,7 +18,7 @@ console.log(newList);
  */
 function findElements (array, a, b) {
 
-    const newArray = array.filter((element) => array.indexOf(element) > a && array.indexOf(element) < b || array.indexOf(element) == a || array.indexOf(element) == b);
+    const newArray = array.filter((element) => (array.indexOf(element) >= a && array.indexOf(element) <= b));
 
     return newArray;
 };
@@ -29,7 +29,7 @@ function findElementsInDifferentWay (array, a, b) {
     newArray = [];
 
     array.forEach((element, index) => {
-        if ((index > a && index < b) || (index == a || index == b)) {
+        if (index >= a && index <= b) {
             newArray.push(element);
         };
     });
