@@ -3,9 +3,9 @@ La funzione ritornerà un nuovo array con i valori che hanno la posizione compre
 Usiamo i nuovi metodi degli array foreach o filter. */
 
 
-const objectList = ["cacio", "cavallo", "caciocavallo", "pesce", "cane", "pescecane", "caffè", "latte", "caffellatte"];
+const objectList = ["cane", "cavallo", "caciocavallo", "pesce", "cane", "pescecane", "caffè", "latte", "caffellatte"];
 
-const newList = findElements(objectList, 1, 6);
+const newList = findElements(objectList, 4, 6);
 
 console.log(newList);
 
@@ -18,11 +18,10 @@ console.log(newList);
  */
 function findElements (array, a, b) {
 
-    const newArray = array.filter((element) => (array.indexOf(element) >= a && array.indexOf(element) <= b));
+    const newArray = array.filter((element, index) => (index >= a && index <= b));
 
     return newArray;
 };
-//funzione sopra sicuramente da migliorare
 
 //creo una funzione con forEach
 function findElementsInDifferentWay (array, a, b) {
