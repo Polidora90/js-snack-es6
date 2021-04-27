@@ -2,12 +2,6 @@
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 Usiamo i nuovi metodi degli array foreach o filter. */
 
-//creo un array con diversi elementi
-
-//scrivo una funzione che come argomento ha il mio array e due valori (a, b)
-//che sono gli indici degli elementi tra cui volgio estrapolare gli elementi del nuovo array
-
-//la funzione usa foreach o filter per ritornarmi un array che contiene elementi con la posizione compresa tra i due numeri a e b
 
 const objectList = ["cacio", "cavallo", "caciocavallo", "pesce", "cane", "pescecane", "caffè", "latte", "caffellatte"];
 
@@ -28,4 +22,17 @@ function findElements (array, a, b) {
 
     return newArray;
 };
-//funzione sicuramente da migliorare
+//funzione sopra sicuramente da migliorare
+
+//creo una funzione con forEach
+function findElementsInDifferentWay (array, a, b) {
+    newArray = [];
+
+    array.forEach((element, index) => {
+        if ((index > a && index < b) || (index == a || index == b)) {
+            newArray.push(element);
+        };
+    });
+
+    return newArray;
+};
