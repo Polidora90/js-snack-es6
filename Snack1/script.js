@@ -30,11 +30,11 @@ function findLightest(bikesArray) {
     //se il peso della bici che sto analizzando è minore del peso della bici più leggera mai esaminata allora
     //sovrascrivo la variabile lightestBike
     for (let i = 1; i < bikesArray.length; i++) {
-        const element = bikesArray[i];
+        const {name, weight} = bikesArray[i];
         
-        if (element.weight < lightestBike.weight) {
-            lightestBike = element;
-        }
+        if (weight < lightestBike.weight) {
+            lightestBike = bikesArray[i];
+        };
     }
 
     //la funzione torna l'oggetto con la key "weight" minore
@@ -42,4 +42,4 @@ function findLightest(bikesArray) {
 }
 
 const lightestBike = findLightest(bikes);
-console.log(lightestBike);
+console.log(`La bici più leggera è ${lightestBike.name} e pesa ${lightestBike.weight} kg.`);
